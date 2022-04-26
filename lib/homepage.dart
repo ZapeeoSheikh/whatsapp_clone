@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/UI%20Colors/AppColor.dart';
 import 'package:whatsapp_clone/custom/TabText.dart';
-import 'package:whatsapp_clone/custom/card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,6 +19,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         // selectedindex = ;
       });
     }
+
+    var title = [
+      "Happy Family...",
+      "Cute Family...",
+      "Sweet Family...",
+      "My Family...",
+      "Apple Pie...",
+      "Cuteness Overload...",
+      "Dark Demons...",
+      "Flutter Learn...",
+      "Emily Family...",
+      "Loving Family...",
+    ];
+
+    var bg = [
+      "bg1.jpg",
+      "bg2.jpg",
+      "bg3.jpg",
+      "bg4.jpg",
+      "bg5.jpg",
+      "bg6.png",
+      "bg7.jpg",
+      "bg8.jpg",
+      "bg9.jpg",
+      "bg10.jpg",
+    ];
 
     return Scaffold(
       // backgroundColor: AppColor.header,
@@ -108,7 +133,105 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ListView.builder(
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
-                      return MyCard();
+                      return Column(
+                        children: [
+                          Container(
+                            height: 80,
+                            width: MediaQuery.of(context).size.width,
+                            color: AppColor.body,
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                right: 10,
+                                left: 10,
+                              ),
+                              alignment: Alignment.center,
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage("img/" + bg[index]),
+                                    radius: 25,
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              top: 20, left: 13),
+                                          child: TabText(
+                                            title[index],
+                                            size: 15,
+                                            color: AppColor.title,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 5),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Icon(
+                                                Icons.check,
+                                                color: AppColor.icons,
+                                              ),
+                                              Icon(
+                                                Icons.image,
+                                                color: AppColor.icons,
+                                              ),
+                                              TabText(
+                                                "Photo",
+                                                size: 15,
+                                                color: AppColor.unselecttext,
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(child: Container()),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        margin:
+                                            EdgeInsets.only(top: 20, left: 10),
+                                        child: TabText(
+                                          "Yesterday",
+                                          color: AppColor.unselecttext,
+                                          size: 15,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 3,
+                                      ),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Icon(
+                                            Icons.volume_off_sharp,
+                                            color: AppColor.icons,
+                                          ),
+                                          SizedBox(
+                                            width: 6,
+                                          ),
+                                          Icon(
+                                            Icons.push_pin_rounded,
+                                            color: AppColor.icons,
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      );
                     }),
                 TabText("CALLS"),
                 TabText("CALLS"),
