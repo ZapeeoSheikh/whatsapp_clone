@@ -229,6 +229,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                                 Divider(
                                   color: AppColor.unselecttext,
+                                  thickness: .3,
                                 ),
                               ],
                             ),
