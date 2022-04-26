@@ -13,12 +13,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
-    int selectedindex = 0;
-    void onTap() {
-      setState(() {
-        // selectedindex = ;
-      });
-    }
 
     var title = [
       "Happy Family...",
@@ -153,6 +147,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     radius: 25,
                                   ),
                                   Container(
+                                    margin: EdgeInsets.only(left: 15),
                                     child: Column(
                                       children: [
                                         Container(
@@ -233,7 +228,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ],
                       );
                     }),
-                TabText("CALLS"),
+                TabText("Your Status "),
                 TabText("CALLS"),
               ]),
             ),
